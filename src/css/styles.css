@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+}
+
+:root {
+    font-size: 10px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.top_container {
+    padding-bottom: 1.5rem;
+    width: 40rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.bottom_container {
+    width: 40rem;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.field {
+    height: 40rem;
+    width: 40rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: white;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.field_item {
+    width: 95%;
+    height: 95%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6rem;
+    cursor: pointer;
+    background:#709fb0;
+    color: rgb(19, 1, 1);
+    border-radius: 1rem;
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+
+.backGroundChange {
+    color: white;
+    background-image: none !important;
+}
+
+.field_item[data-empty] {
+    cursor: default;
+    background-color: white;
+    background-image: none;
+    font-size: 0;
+}
+
+select {
+    font-size: 1.8rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(1,1,1,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay p {
+    color: white;
+    font-size: 3.2rem;
+}
+
+.controlButton {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    width: 14rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    background-color:#709fb0;
+    color: white;
+    cursor: pointer;
+}
+
+#soundButton {
+    padding: 2.4rem;
+    width: 7rem;
+    background-color:#709fb0;
+}
+
+.mute {
+    background: url('../assets/img/mute.png') no-repeat;
+    background-position: center;
+}
+
+.volume {
+    background: url('../assets/img/volume.png') no-repeat;
+    background-position: center;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    outline: none;
+}
+
+button:disabled {
+    background-color: gray;
+}
+
+button:disabled,
+button[disabled] {
+    background-color: rgba(1, 1, 1, 0.4);
+    cursor: default;
+    transform: none;
+}
+
+#chooseType {
+    width: 17rem;
+}
+
+@media (max-width: 400px) {
+    .field {
+        height: 40rem;
+        width: 100vw;
+    }
+
+    .top_container {
+        width: 100vw;
+        font-size: 1.5rem;
+    }
+
+    select {
+        font-size: 1.5rem;
+    }
+    
+    .bottom_container {
+        width: 100vw;
+    }
+
+    .controlButton {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        width: 13rem;
+        font-size: 1.6rem;
+        border-radius: 1rem;
+        outline: none;
+        border: none;
+        background-color:#709fb0;
+        color: white;
+        cursor: pointer;
+    }
+}
